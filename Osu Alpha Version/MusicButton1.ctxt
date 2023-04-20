@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=MusicButton1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MusicButton1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=boolean\ getMusic1Clicked()
+comment2.text=\r\n\ getMusic1Clicked()\ -\ Retorna\ se\ o\ bot\u00E3o\ 1\ est\u00E1\ ativo\ ou\ n\u00E3o.\r\n
+comment3.params=music1Clicked
+comment3.target=void\ setMusic1Clicked(boolean)
+comment3.text=\r\n\ setMusic1Clicked()\ -\ Define\ se\ o\ bot\u00E3o\ 1\ esta\ ativo\ ou\ n\u00E3o.\r\n
+numComments=4

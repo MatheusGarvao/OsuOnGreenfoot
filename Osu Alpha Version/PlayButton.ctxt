@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=PlayButton
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ PlayButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=boolean\ isPlayable()
+comment2.text=\r\n\ isPlayable\ -\ Identifica\ se\ \u00E9\ poss\u00EDvel\ come\u00E7ar\ o\ jogo\ ao\ clicar\ em\ play\ ou\ n\u00E3o.\r\n
+comment3.params=
+comment3.target=void\ qualMusica()
+numComments=4
