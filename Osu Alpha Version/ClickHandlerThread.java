@@ -1,7 +1,4 @@
 import greenfoot.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-
 /**
  * Write a description of class ClickHandlerThread here.
  * 
@@ -12,9 +9,9 @@ public class ClickHandlerThread extends Thread {
     private Osu world;
     private boolean running;
     private boolean segurandoZ;
-    private boolean segurandoX;    
-    GreenfootSound sound = new GreenfootSound("click.wav");
-
+    private boolean segurandoX;  
+    int pontuacao;
+    static int vezesMuitoCedo;
     public ClickHandlerThread(Osu world) {
         this.world = world;
         running = true;
@@ -30,6 +27,15 @@ public class ClickHandlerThread extends Thread {
                         .map(Circulo.class::cast)
                         .findFirst().orElse(null);
                     if (circulo != null) {
+                        if(circulo.borda.tamanho >= 55 && circulo.borda.tamanho <= 65){
+                           pontuacao += 300;
+                        } else if (circulo.borda.tamanho > 65 && circulo.borda.tamanho < 75){
+                            pontuacao += 100;
+                        } else if (circulo.borda.tamanho > 75 && circulo.borda.tamanho < 85){
+                            pontuacao += 50;
+                        } else {
+                            vezesMuitoCedo++;
+                        }
                         world.removeObject(circulo.borda);
                         world.removeObject(circulo);
                     }
@@ -46,15 +52,16 @@ public class ClickHandlerThread extends Thread {
                         .filter(Circulo.class::isInstance)
                         .map(Circulo.class::cast)
                         .findFirst().orElse(null);
-                    if (circulo != null) {
-                        sound.play();
-                        int pont = circulo.borda.tamanho;
-                        circulo.borda.vida.contador();
-                        if(pont>=55&&pont<=65){
-                           System.out.println("X"+pont); 
+                    if (circulo != null) {                    
+                        if(circulo.borda.tamanho >= 55 && circulo.borda.tamanho <= 65){
+                           pontuacao += 300;
+                        } else if (circulo.borda.tamanho > 65 && circulo.borda.tamanho < 75){
+                            pontuacao += 100;
+                        } else if (circulo.borda.tamanho > 75 && circulo.borda.tamanho < 85){
+                            pontuacao += 50;
+                        } else {
+                            vezesMuitoCedo++;
                         }
-                        // NANDIM, AQUI A PONTUAÇÃO, EU FIZ PARA O CLICK DO X, DPS Q TU ARRUMAR
-                        // FAZ PARA O CLICK DO Z
                         world.removeObject(circulo.borda);
                         world.removeObject(circulo);
                     }
@@ -62,6 +69,11 @@ public class ClickHandlerThread extends Thread {
                 segurandoX = true;
             }else if(!Greenfoot.isKeyDown("x")){
                 segurandoX = false;
+            }
+            
+            if (vezesMuitoCedo == 3){
+                // aqui vai ter o método de reduzir vida
+                vezesMuitoCedo = 0;
             }
         }
     }

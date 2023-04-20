@@ -18,30 +18,29 @@ public class Vida extends Actor
     GreenfootImage vida25 = new GreenfootImage("vida25.png");
     GreenfootImage vida0 = new GreenfootImage("vida0.png");
     int saude = 100;
-    int contador = 0;
     public Vida(){
         setImage(vida100);
     }
     
+    public Vida(int saude){
+        this.saude = saude;
+        setarImagem();
+    }
+    
+    
     public void setarImagem(){
-        System.out.println(saude);
         switch(saude){
                 case(100):
                 setImage(vida100);
-                break;
                 case(75):
                 setImage(vida75);
-                break;
-                case(50):  
+                case(50):
                 setImage(vida50);
-                break;
                 case(25):
                 setImage(vida25);
-                break;
                 case(0):
                 setImage(vida0);
-                break;
-        };
+        }
         if(saude==0){
             //implementar tela de perda
         }
@@ -51,18 +50,8 @@ public class Vida extends Actor
         setarImagem();
     }
     
-    public void aumentar(){
-        if(saude!=100){
-            saude+=25;
-            setarImagem();
-        }
+    public int getSaude(){
+        return this.saude;
     }
     
-    public void contador(){
-        contador++;
-        if(contador==4){
-            diminuir();
-            contador = 0;
-        }
-    }
 }
