@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Borda
+comment0.text=\n\ Write\ a\ description\ of\ class\ Borda\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=x\ y\ circulo\ vida
+comment1.target=Borda(int,\ int,\ Circulo,\ Vida)
+comment2.params=
+comment2.target=void\ act()
+numComments=3
