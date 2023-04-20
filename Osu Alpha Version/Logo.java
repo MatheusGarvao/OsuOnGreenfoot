@@ -16,11 +16,11 @@ public class Logo extends Button
     public void act()
     {
         if (isButtonClicked()) {
-            try {
-                Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
     }
 }
